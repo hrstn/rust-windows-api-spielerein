@@ -99,10 +99,10 @@ unsafe fn get_shit_done(pid: i32){
             print_msg(&format!("error: {:?}",GetLastError()).to_string(),1);
         }else{
             let h_thread = h_thread.unwrap();
-            print_msg(&format!("got the thread running: {:?}",tid).to_string(),0);
-            print_msg(&format!("waiting for finish thread executing: {:?}",tid).to_string(),0);
+            print_msg(&format!("got the thread running: {:?}",h_thread).to_string(),0);
+            print_msg(&format!("waiting for finish thread executing: {:?}",h_thread).to_string(),0);
             WaitForSingleObject(h_thread,INFINITE);
-            print_msg(&format!("thread finished executing: {:?}",tid).to_string(),0);
+            print_msg(&format!("thread finished executing: {:?}",h_thread).to_string(),0);
 
             print_msg("Done closing the handles",0);
             CloseHandle(h_thread);
